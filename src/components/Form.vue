@@ -3,8 +3,16 @@
     <form class="form" @submit.prevent="onSubmit">
 
       <div class="input-group">
-        <input class="form-input" type="text">
-        <input class="form-input" type="email">
+        <!-- <InputText :inputText="inputText" /> -->
+          <!-- <p>Parent something: {{ innertext }}</p>
+  <hr>
+  Child:  -->
+        <InputText 
+        v-model="innertext"
+        />
+        <InputEmail />
+        <!-- <input class="form-input" type="text"> -->
+        <!-- <input class="form-input" type="email"> -->
       </div>
 
       <div class="input-group">
@@ -35,8 +43,20 @@
 </template>
 
 <script>
-  export default {
-    name: 'Form'
-  }
-  
+import InputText from './form_components/InputText.vue'
+import InputEmail from './form_components/InputEmail.vue'
+
+export default {
+  name: 'Form',
+
+  components: {
+    InputText,
+    InputEmail
+  },
+
+  data: () => ({
+    innertext: "text"
+  }),
+}
+
 </script>

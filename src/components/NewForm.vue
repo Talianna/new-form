@@ -12,7 +12,6 @@
 <script>
 import Form from './Form.vue'
 
-
 export default {
   name: 'NewForm',
 
