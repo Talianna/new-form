@@ -3,19 +3,38 @@
     width: 70vw;
     margin: 70px auto 0;
     padding: 50px 30px;
+    border-radius: 5px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
 }
 
 .form-input {
-    width: 100%;
+    width: 44%;
     margin-bottom: 20px;
+    line-height: 40px;
+    height: 40px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0 5px;
 }
 
-/* .form-textarea {
+.form-textarea {
     width: 100%;
-    margin-bottom: 20px;
-} */
+    height: 100px;
+}
 
 .form-btn {
- margin: 50 px auto 20px;
- width: 250px;
+    margin: 50 px auto 20px;
+    width: 250px;
+    line-height: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: indianred;
+    border: none;
+    outline: none;
+    color: white;
 }
