@@ -2,20 +2,22 @@
   <div>
     <form class="form" @submit.prevent="onSubmit">
 
+      <p>{{ text }} {{ email }} {{ phone }} {{ url }} {{ number }} {{ date }} {{ select }}</p>
+
       <div class="input-group">
         <!-- <InputText :inputText="inputText" /> -->
           <!-- <p>Parent something: {{ innertext }}</p>
   <hr>
   Child:  -->
         <FormInput 
-          :value="value"
+          v-model="text"
           label="Text" 
           type="text"
           placeholder="Your Text Here"
         />
 
         <FormInput 
-          :value="value"
+          v-model="email"
           label="Email" 
           type="email"
           placeholder="Your Email Here"
@@ -31,14 +33,14 @@
 
       <div class="input-group">
         <FormInput 
-          :value="value"
+          v-model="phone"
           label="Phone" 
           type="tel"
           placeholder="Your Phone Here"
         />
 
         <FormInput 
-          :value="value"
+          v-model="url"
           label="Url" 
           type="url"
           placeholder="Your Url Here"
@@ -49,14 +51,14 @@
 
       <div class="input-group">
         <FormInput 
-          :value="value"
+          v-model="number"
           label="Number" 
           type="number"
           placeholder="Your Number Here"
         />
 
         <FormInput 
-          :value="value"
+          v-model="date"
           label="Date" 
           type="date"
           placeholder="Your Date Here"
@@ -68,7 +70,7 @@
       <div class="input-group">
 
         <FormSelect 
-          :value="value"
+          v-model="select"
           label="Select" 
           type="select"
           placeholder="Select smth"
@@ -105,10 +107,16 @@ export default {
   },
 
   data: () => ({
-    value: '',
+    // value: '',
 
     // fields: [],
-    // inputType: '',
+    text: '',
+    email: '',
+    phone: '',
+    url: '',
+    number: '',
+    date: '',
+    select: '',
 
 
     price: 0,

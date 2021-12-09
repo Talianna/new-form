@@ -2,13 +2,15 @@
     <div>
         <label v-if="label">{{ label }}</label>
         <input 
-            v-model="inputVal"
+            @input="$emit('input', $event.target.value)"
+            :value="value"
             :type="type"
             :label="label"
             :name="name"
             :placeholder="placeholder"
             class="form-input"             
         />
+                    <!-- @input="$emit('input', $event.target.value)" -->
     </div>
 </template>
 
@@ -20,15 +22,15 @@ export default {
     //  props: ['type', 'value', 'field'],
     //  props: ]
 
-    data: () => ({
-        inputVal: ''
-    }),
+    // data: () => ({
+    //     inputVal: ''
+    // }),
 
-    watch:{
-        value: function(newValue){
-            this.$emit('update:value', newValue)
-        }
-    },
+    // watch:{
+    //     value: function(newValue){
+    //         this.$emit('update:value', newValue)
+    //     }
+    // },
 
     props: {
         type: {
@@ -51,7 +53,7 @@ export default {
             default: ''
         },
 
-        // value: {}                            
+        value: {}                            
     },
 }
 
