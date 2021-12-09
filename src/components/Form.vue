@@ -66,13 +66,21 @@
       </div>
 
       <div class="input-group">
-        <select class="form-input">
+
+        <FormSelect 
+          :value="value"
+          label="Select" 
+          type="select"
+          placeholder="Select smth"
+        />
+
+        <!-- <select class="form-input">
           <option>5</option>
           <option>4</option>
           <option>3</option>
           <option>2</option>
           <option>1</option>
-        </select>
+        </select> -->
       </div>
 
       <textarea class="form-input form-textarea" name="" id="" cols="30" rows="10"></textarea>
@@ -85,13 +93,15 @@
 <script>
 import FormInput from './form_components/FormInput.vue'
 import CurrencyInput from './form_components/CurrencyInput.vue'
+import FormSelect from './form_components/FormSelect.vue'
 
 export default {
   name: 'Form',
 
   components: {
     FormInput,
-    CurrencyInput
+    CurrencyInput,
+    FormSelect
   },
 
   data: () => ({
