@@ -7,22 +7,62 @@
           <!-- <p>Parent something: {{ innertext }}</p>
   <hr>
   Child:  -->
-        <InputText 
-        v-model="innertext"
+        <FormInput 
+          :value="value"
+          label="Text" 
+          type="text"
+          placeholder="Your Text Here"
         />
-        <InputEmail />
+
+        <FormInput 
+          :value="value"
+          label="Email" 
+          type="email"
+          placeholder="Your Email Here"
+        />
         <!-- <input class="form-input" type="text"> -->
         <!-- <input class="form-input" type="email"> -->
       </div>
 
+      <currency-input 
+        label="Price" 
+        v-model="price"      
+      ></currency-input>
+
       <div class="input-group">
-        <input class="form-input" type="tel">
-        <input class="form-input" type="url">
+        <FormInput 
+          :value="value"
+          label="Phone" 
+          type="tel"
+          placeholder="Your Phone Here"
+        />
+
+        <FormInput 
+          :value="value"
+          label="Url" 
+          type="url"
+          placeholder="Your Url Here"
+        />
+        <!-- <input class="form-input" type="tel">
+        <input class="form-input" type="url"> -->
       </div>
 
       <div class="input-group">
-        <input class="form-input" type="number">
-        <input class="form-input" type="date">
+        <FormInput 
+          :value="value"
+          label="Number" 
+          type="number"
+          placeholder="Your Number Here"
+        />
+
+        <FormInput 
+          :value="value"
+          label="Date" 
+          type="date"
+          placeholder="Your Date Here"
+        />
+        <!-- <input class="form-input" type="number">
+        <input class="form-input" type="date"> -->
       </div>
 
       <div class="input-group">
@@ -43,20 +83,43 @@
 </template>
 
 <script>
-import InputText from './form_components/InputText.vue'
-import InputEmail from './form_components/InputEmail.vue'
+import FormInput from './form_components/FormInput.vue'
+import CurrencyInput from './form_components/CurrencyInput.vue'
 
 export default {
   name: 'Form',
 
   components: {
-    InputText,
-    InputEmail
+    FormInput,
+    CurrencyInput
   },
 
   data: () => ({
-    innertext: "text"
+    value: '',
+
+    // fields: [],
+    // inputType: '',
+
+
+    price: 0,
+    shipping: 0,
+    handling: 0,
+    discount: 0
   }),
+
+  //   data: {
+
+  // },
+  computed: {
+    total: function () {
+      return ((
+        this.price * 100 + 
+        this.shipping * 100 + 
+        this.handling * 100 - 
+        this.discount * 100
+      ) / 100).toFixed(2)
+    }
+  }
 }
 
 </script>
