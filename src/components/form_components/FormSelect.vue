@@ -1,64 +1,66 @@
 <template>
-    <div>
-        <label v-if="label">{{ label }}</label>
+  <div>
+    <label v-if="label">{{ label }}</label>
 
-        <select 
-            @input="$emit('input', $event.target.value)"
-            :value="value"
-            :type="type"
-            :label="label"
-            :name="name"
-            :placeholder="placeholder"
-            class="form-input" 
-        >
-            <option>5</option>
-            <option>4</option>
-            <option>3</option>
-            <option>2</option>
-            <option>1</option>
-        </select>
-    </div>
+    <select
+      @input="$emit('input', $event.target.value)"
+      :value="value"
+      :type="type"
+      :label="label"
+      :name="name"
+      :placeholder="placeholder"
+      class="form-input"
+    >
+      <option v-for="(option, index) in options" :value="option.value" :key="index">
+        {{ option.text }}
+      </option>
+    </select>
+  </div>
 </template>
 
 <script>
-
 export default {
-    name: "FormSelect",
+  name: "FormSelect",
 
-        data: () => ({
-        inputVal: ''
-    }),
+  data: () => ({
+    inputVal: "",
 
-    watch:{
-        value: function(newValue){
-            this.$emit('update:value', newValue)
-        }
+    selected: "",
+    options: [
+      { text: "Один", value: "1" },
+      { text: "Два", value: "2" },
+      { text: "Три", value: "3" },
+    ],
+  }),
+
+  watch: {
+    value: function (newValue) {
+      this.$emit("update:value", newValue);
+    },
+  },
+
+  props: {
+    type: {
+      type: String,
+      default: "text",
     },
 
-    props: {
-        type: {
-            type: String,
-            default: 'text'
-        },
-
-        label: {
-            type: String,
-            default: ''
-        },
-
-        name: {
-            type: String,
-            default: ''
-        },
-
-        placeholder: {
-            type: String,
-            default: ''
-        },
-
-        value: {}                            
-
+    label: {
+      type: String,
+      default: "",
     },
-}
 
+    name: {
+      type: String,
+      default: "",
+    },
+
+    placeholder: {
+      type: String,
+      default: "",
+    },
+
+    value: {},
+  }
+};
 </script>

@@ -82,18 +82,18 @@
           <p>{{  }}</p>
           <div class="input-group"> 
             <div>
-              <label for="contactChoice1">Email</label>
               <input type="radio" id="contactChoice1" name="contact" value="email">
+              <label for="contactChoice1">Email</label>
             </div>
 
             <div>
-              <label for="contactChoice2">Phone</label>
               <input type="radio" id="contactChoice2" name="contact" value="phone">
+              <label for="contactChoice2">Phone</label>
             </div>
 
             <div>
-              <label for="contactChoice3">Mail</label>
               <input type="radio" id="contactChoice3" name="contact" value="mail">
+              <label for="contactChoice3">Mail</label>
             </div>
           </div>
         </div>
@@ -102,18 +102,18 @@
           <p>{{  }}</p>
           <div class="input-group"> 
             <div>
-              <label for="subscribeNews">Subscribe to newsletter?</label>
               <input type="checkbox" id="subscribeNews1" name="subscribe" value="newsletter">
+              <label for="subscribeNews">Subscribe to newsletter?</label>
             </div>
 
             <div>
-              <label for="subscribeNews">Subscribe to newsletter?</label>
               <input type="checkbox" id="subscribeNews2" name="subscribe" value="newsletter">
+              <label for="subscribeNews">Subscribe to?</label>
             </div>
 
             <div>
-              <label for="subscribeNews">Subscribe to newsletter?</label>
               <input type="checkbox" id="subscribeNews3" name="subscribe" value="newsletter">
+              <label for="subscribeNews">Subscribe?</label>
             </div>
           </div>
         </div>
