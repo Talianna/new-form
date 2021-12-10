@@ -10,7 +10,6 @@
             :placeholder="placeholder"
             class="form-input"             
         />
-                    <!-- @input="$emit('input', $event.target.value)" -->
     </div>
 </template>
 
@@ -18,19 +17,6 @@
 
 export default {
     name: 'FormInput',
-
-    //  props: ['type', 'value', 'field'],
-    //  props: ]
-
-    // data: () => ({
-    //     inputVal: ''
-    // }),
-
-    // watch:{
-    //     value: function(newValue){
-    //         this.$emit('update:value', newValue)
-    //     }
-    // },
 
     props: {
         type: {

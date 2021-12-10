@@ -5,10 +5,7 @@
       <p>{{ text }} {{ email }} {{ phone }} {{ url }} {{ number }} {{ date }} {{ select }}</p>
 
       <div class="input-group">
-        <!-- <InputText :inputText="inputText" /> -->
-          <!-- <p>Parent something: {{ innertext }}</p>
-  <hr>
-  Child:  -->
+
         <FormInput 
           v-model="text"
           label="Text" 
@@ -26,10 +23,10 @@
         <!-- <input class="form-input" type="email"> -->
       </div>
 
-      <currency-input 
+      <!-- <currency-input 
         label="Price" 
         v-model="price"      
-      ></currency-input>
+      ></currency-input> -->
 
       <div class="input-group">
         <FormInput 
@@ -107,9 +104,6 @@ export default {
   },
 
   data: () => ({
-    // value: '',
-
-    // fields: [],
     text: '',
     email: '',
     phone: '',
@@ -118,16 +112,12 @@ export default {
     date: '',
     select: '',
 
-
     price: 0,
     shipping: 0,
     handling: 0,
     discount: 0
   }),
 
-  //   data: {
-
-  // },
   computed: {
     total: function () {
       return ((

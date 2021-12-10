@@ -54,8 +54,6 @@ export default {
             type: String,
             default: ''
         },
-
-        // value: {}                            
     },
 }
 
