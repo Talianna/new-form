@@ -1,21 +1,21 @@
 <template>
-  <div>
-    <label v-if="label">{{ label }}</label>
+    <div>
+        <label v-if="label">{{ label }}</label>
 
-    <select
-      @input="$emit('input', $event.target.value)"
-      :value="value"
-      :type="type"
-      :label="label"
-      :name="name"
-      :placeholder="placeholder"
-      class="form-input"
-    >
-      <option v-for="(option, index) in options" :value="option.value" :key="index">
-        {{ option.text }}
-      </option>
-    </select>
-  </div>
+        <select
+            @input="$emit('input', $event.target.value)"
+            :value="value"
+            :type="type"
+            :label="label"
+            :name="name"
+            :placeholder="placeholder"
+            class="form-input"
+        >
+            <option v-for="(option, index) in options" :value="option.value" :key="index">
+                {{ option.text }}
+            </option>
+        </select>
+    </div>
 </template>
 
 <script>
