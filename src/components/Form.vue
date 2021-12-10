@@ -2,25 +2,29 @@
   <div>
     <form class="form" @submit.prevent="onSubmit">
 
-      <p>{{ text }} {{ email }} {{ phone }} {{ url }} {{ number }} {{ date }} {{ select }}</p>
+      <!-- <p>{{ text }} {{ email }} {{ phone }} {{ url }} {{ number }} {{ date }} {{ select }}</p> -->
 
       <div class="input-group">
 
-        <FormInput 
-          v-model="text"
-          label="Text" 
-          type="text"
-          placeholder="Your Text Here"
-        />
+        <div>
+          <p>{{ text }}</p>
+          <FormInput 
+            v-model="text"
+            label="Text" 
+            type="text"
+            placeholder="Your Text Here"
+          />
+        </div>
 
-        <FormInput 
-          v-model="email"
-          label="Email" 
-          type="email"
-          placeholder="Your Email Here"
-        />
-        <!-- <input class="form-input" type="text"> -->
-        <!-- <input class="form-input" type="email"> -->
+        <div>
+          <p>{{ email }}</p>
+          <FormInput 
+            v-model="email"
+            label="Email" 
+            type="email"
+            placeholder="Your Email Here"
+          />
+        </div>
       </div>
 
       <!-- <currency-input 
@@ -29,57 +33,90 @@
       ></currency-input> -->
 
       <div class="input-group">
-        <FormInput 
-          v-model="phone"
-          label="Phone" 
-          type="tel"
-          placeholder="Your Phone Here"
-        />
+        <div>
+          <p>{{ phone }}</p>
+          <FormInput 
+            v-model="phone"
+            label="Phone" 
+            type="tel"
+            placeholder="Your Phone Here"
+          />
+        </div>
 
-        <FormInput 
-          v-model="url"
-          label="Url" 
-          type="url"
-          placeholder="Your Url Here"
-        />
-        <!-- <input class="form-input" type="tel">
-        <input class="form-input" type="url"> -->
+        <div>
+          <p>{{ date }}</p>
+          <FormInput 
+            v-model="date"
+            label="Date" 
+            type="date"
+            placeholder="Your Date Here"
+          />
+        </div>
       </div>
 
       <div class="input-group">
-        <FormInput 
-          v-model="number"
-          label="Number" 
-          type="number"
-          placeholder="Your Number Here"
-        />
+        <div>
+          <p>{{ number }}</p>
+          <FormInput 
+            v-model="number"
+            label="Number" 
+            type="number"
+            placeholder="Your Number Here"
+          />
+        </div>
 
-        <FormInput 
-          v-model="date"
-          label="Date" 
-          type="date"
-          placeholder="Your Date Here"
-        />
-        <!-- <input class="form-input" type="number">
-        <input class="form-input" type="date"> -->
+        <div>
+          <p>{{ select }}</p>
+          <FormSelect 
+            v-model="select"
+            label="Select" 
+            type="select"
+            placeholder="Select smth"
+          />
+        </div>
       </div>
 
       <div class="input-group">
 
-        <FormSelect 
-          v-model="select"
-          label="Select" 
-          type="select"
-          placeholder="Select smth"
-        />
+        <div>
+          <p>{{  }}</p>
+          <div class="input-group"> 
+            <div>
+              <label for="contactChoice1">Email</label>
+              <input type="radio" id="contactChoice1" name="contact" value="email">
+            </div>
 
-        <!-- <select class="form-input">
-          <option>5</option>
-          <option>4</option>
-          <option>3</option>
-          <option>2</option>
-          <option>1</option>
-        </select> -->
+            <div>
+              <label for="contactChoice2">Phone</label>
+              <input type="radio" id="contactChoice2" name="contact" value="phone">
+            </div>
+
+            <div>
+              <label for="contactChoice3">Mail</label>
+              <input type="radio" id="contactChoice3" name="contact" value="mail">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p>{{  }}</p>
+          <div class="input-group"> 
+            <div>
+              <label for="subscribeNews">Subscribe to newsletter?</label>
+              <input type="checkbox" id="subscribeNews1" name="subscribe" value="newsletter">
+            </div>
+
+            <div>
+              <label for="subscribeNews">Subscribe to newsletter?</label>
+              <input type="checkbox" id="subscribeNews2" name="subscribe" value="newsletter">
+            </div>
+
+            <div>
+              <label for="subscribeNews">Subscribe to newsletter?</label>
+              <input type="checkbox" id="subscribeNews3" name="subscribe" value="newsletter">
+            </div>
+          </div>
+        </div>
       </div>
 
       <textarea class="form-input form-textarea" name="" id="" cols="30" rows="10"></textarea>

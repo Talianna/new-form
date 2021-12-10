@@ -3,12 +3,13 @@
         <label v-if="label">{{ label }}</label>
 
         <select 
-            v-model="inputVal"
+            @input="$emit('input', $event.target.value)"
+            :value="value"
             :type="type"
             :label="label"
             :name="name"
             :placeholder="placeholder"
-            class="form-input"
+            class="form-input" 
         >
             <option>5</option>
             <option>4</option>
@@ -54,6 +55,9 @@ export default {
             type: String,
             default: ''
         },
+
+        value: {}                            
+
     },
 }
 
